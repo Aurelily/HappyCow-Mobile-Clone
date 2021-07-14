@@ -3,7 +3,8 @@ import * as Location from "expo-location";
 import MapView from "react-native-maps";
 
 //Pour la recherche autocoplete GooglePlace
-import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+// import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+
 import { GOOGLE_API_KEY } from "@env";
 
 //Import axios for request

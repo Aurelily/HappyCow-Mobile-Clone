@@ -4,8 +4,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-//dotenv
-require("dotenv").config();
 
 //import axios for request API
 import axios from "axios";
@@ -35,8 +33,8 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 //variable URL
-// const url = "http://localhost:3001/";
-const url = "https://lily-happycow.herokuapp.com/";
+const url = "http://localhost:3001/";
+// const url = "https://lily-happycow.herokuapp.com/";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
