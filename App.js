@@ -33,8 +33,8 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 //variable URL
-const url = "http://localhost:3001/";
-// const url = "https://lily-happycow.herokuapp.com/";
+// const url = "http://localhost:3001/";
+const url = "https://lily-happycow.herokuapp.com/";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);

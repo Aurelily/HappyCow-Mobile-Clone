@@ -49,7 +49,7 @@ export default function HomeScreen({ navigation, url }) {
   //Toggle filters buttons
   const [filters, setFilters] = useState([]);
 
-  //Chargement des données de l'API via la fonction fetchData
+  //Chargement des données de l'API
   useEffect(() => {
     const getLocationAndData = async () => {
       try {
@@ -79,7 +79,6 @@ export default function HomeScreen({ navigation, url }) {
 
         // console.log(response.data);
         setData(response.data);
-
         setIsLoading(false);
       } catch (error) {
         alert(error.message);
@@ -87,6 +86,20 @@ export default function HomeScreen({ navigation, url }) {
     };
     getLocationAndData();
   }, [filters, search]);
+
+  // Footer de la flatlist contenant le loader
+  const renderFooter = () => {
+    return (
+      <View style={styles.footer}>
+        {isLoading ? (
+          <ActivityIndicator
+            color="#9069CD"
+            style={{ margin: 30, height: 100 }}
+          />
+        ) : null}
+      </View>
+    );
+  };
 
   return (
     <>
@@ -123,6 +136,7 @@ export default function HomeScreen({ navigation, url }) {
             return isLoading ? (
               <View>
                 <ActivityIndicator />
+                <Text>Chargement des lieux...</Text>
               </View>
             ) : (
               <ItemCard
@@ -135,6 +149,7 @@ export default function HomeScreen({ navigation, url }) {
               />
             );
           }}
+          ListFooterComponent={renderFooter}
         />
       </View>
     </>
