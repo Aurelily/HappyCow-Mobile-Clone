@@ -94,6 +94,24 @@ export default function HomeScreen({ navigation, url }) {
       </View>
     );
   };
+  //Fonction de rendu des éléments de la Flatlist pour optimisation des performances
+  const renderItem = ({ item }) => {
+    return isLoading ? (
+      <View>
+        <ActivityIndicator />
+        <Text>Chargement des lieux...</Text>
+      </View>
+    ) : (
+      <ItemCard
+        item={item}
+        navigation={navigation}
+        itemType={item.type}
+        userLat={userLat}
+        userLng={userLng}
+        authorize={authorize}
+      />
+    );
+  };
 
   return (
     <>
@@ -126,23 +144,10 @@ export default function HomeScreen({ navigation, url }) {
         <FlatList
           data={data}
           keyExtractor={(item) => JSON.stringify(item.placeId)}
-          renderItem={({ item }) => {
-            return isLoading ? (
-              <View>
-                <ActivityIndicator />
-                <Text>Chargement des lieux...</Text>
-              </View>
-            ) : (
-              <ItemCard
-                item={item}
-                navigation={navigation}
-                itemType={item.type}
-                userLat={userLat}
-                userLng={userLng}
-                authorize={authorize}
-              />
-            );
-          }}
+          maxToRenderPerBatch={10}
+          updateCellsBatchingPeriod={50}
+          initialNumToRender={10}
+          renderItem={renderItem}
           ListFooterComponent={renderFooter}
         />
       </View>
