@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-  Button,
   Text,
   TextInput,
   View,
@@ -26,7 +25,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview"
 
 //colors
 import colors from "../assets/colors";
-const { purpleCow, greenCow, pinkVege, pinkVegeOption, yellowStore } = colors;
+const { purpleCow } = colors;
 
 //import icons
 import {
@@ -36,7 +35,7 @@ import {
   FontAwesome,
 } from "@expo/vector-icons";
 
-export default function SignUpScreen({ setToken, url }) {
+export default function SignUpScreen({ url }) {
   const navigation = useNavigation();
 
   //States of input
@@ -76,14 +75,10 @@ export default function SignUpScreen({ setToken, url }) {
             yearBirth,
           });
 
-          console.log(response.data);
-
           if (response.data.token) {
             navigation.navigate("SignIn");
           }
         } catch (e) {
-          // console.log(Object.keys(e));
-          console.log(e.response.data.message);
           if (
             e.response.data.message === "This email already has an account." ||
             e.response.data.message === "This username already has an account."
@@ -216,7 +211,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: "white",
-    // justifyContent: "center",
+
     alignItems: "center",
     width: windowWidth,
     height: windowHeight,
@@ -249,14 +244,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: 300,
     height: 60,
-    // marginVertical: 20,
   },
 
   txtButton: {
     color: "white",
     fontSize: 16,
     textTransform: "uppercase",
-    // fontWeight: "bold",
   },
   pictureStyle: {
     width: "100%",

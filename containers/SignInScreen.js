@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/core";
 import {
-  Button,
   Text,
   TextInput,
   View,
@@ -22,13 +21,10 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview"
 
 // Dimensions
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
-const statusBarHeight = Constants.statusBarHeight;
-const scrollViewHeight = windowHeight - statusBarHeight;
 
 //Colors:
 import colors from "../assets/colors";
-const { purpleCow, greenCow, pinkVege, pinkVegeOption, yellowStore } = colors;
+const { purpleCow } = colors;
 
 //Import asyncStorage pour stocker le token
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -50,24 +46,21 @@ export default function SignInScreen({ setToken, url }) {
         email,
         password,
       });
-      console.log(response.data);
+      // console.log(response.data);
 
       if (response.data.token) {
         const userToken = response.data.token;
-        const userId = response.data.id;
+
         setToken(userToken);
-        // getUserId(userId);
 
         //Je stock le token et le userId sur le asyncStorage
         await AsyncStorage.setItem("userToken", userToken);
-        // await AsyncStorage.setItem("userId", userId);
 
         setIsLoading(false);
       } else {
         setAlert("Une erreur est survenue, veuillez réssayer.");
       }
     } catch (error) {
-      // console.log(error.response.data.error);
       if (error.response.data.error === "Unauthorized") {
         setIsLoading(false);
         setAlert("Mauvais email et/ou mot de passe");
@@ -133,7 +126,6 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     backgroundColor: "white",
-    // justifyContent: "center",
     alignItems: "center",
     width: windowWidth,
     height: "100%",
@@ -176,6 +168,5 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 16,
     textTransform: "uppercase",
-    // fontWeight: "bold",
   },
 });

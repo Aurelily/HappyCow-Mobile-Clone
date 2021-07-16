@@ -1,37 +1,8 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
-
-//import icons
-import { Ionicons } from "@expo/vector-icons";
-
-//import colors
-import colors from "../assets/colors";
-const {
-  purpleCow,
-  greenCow,
-  pinkVege,
-  pinkVegOption,
-  yellowStore,
-  blueOther,
-  pinkIceCream,
-  orangeJuice,
-  brownBakery,
-  blueCattering,
-  blueBnB,
-} = colors;
+import React from "react";
+import { StyleSheet, ScrollView } from "react-native";
 
 //import components
-import IconType from "../components/IconType";
+
 import ButtonFilter from "./ButtonFilter";
 
 const FiltersBar = ({ filters, setFilters }) => {
@@ -41,10 +12,6 @@ const FiltersBar = ({ filters, setFilters }) => {
       horizontal={true}
       showsHorizontalScrollIndicator={false}
     >
-      {/* <TouchableOpacity style={styles.btFilter}>
-        <Ionicons name="filter-outline" size={24} color="grey" />
-        <Text style={styles.txtFilters}>Filtres</Text>
-      </TouchableOpacity> */}
       <ButtonFilter
         filters={filters}
         setFilters={setFilters}

@@ -5,9 +5,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-//import axios for request API
-import axios from "axios";
-
 //Gère la statusBar du téléphone
 import { StatusBar } from "expo-status-bar";
 
@@ -30,7 +27,6 @@ import HomeTabs from "./containers/HomeTabs";
 
 //Navigation
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 //variable URL
 // const url = "http://localhost:3001/";
@@ -53,16 +49,6 @@ const App = () => {
     setUserToken(token);
   };
 
-  // // getUserId function to save userId inAsyncStorage
-  // const getUserId = async (userId) => {
-  //   if (userId) {
-  //     AsyncStorage.setItem("userId", userId);
-  //   } else {
-  //     AsyncStorage.removeItem("userId");
-  //   }
-  //   setUserId(userId);
-  // };
-
   // Favorites management function
   const manageFavorites = async (result) => {
     const favCopy = [...favList];
@@ -71,13 +57,13 @@ const App = () => {
       favCopy.push(result);
       setFavList(favCopy);
       AsyncStorage.setItem("fav", JSON.stringify(favCopy));
-      console.log("favorisAdded ", favCopy);
+      // console.log("favorisAdded ", favCopy);
     } else {
       const index = favCopy.indexOf(exist);
       favCopy.splice(index, 1);
       setFavList(favCopy);
       AsyncStorage.setItem("fav", JSON.stringify(favCopy));
-      console.log("favorisRemoved ", favCopy);
+      // console.log("favorisRemoved ", favCopy);
     }
   };
 
@@ -126,7 +112,6 @@ const App = () => {
           <Stack.Screen
             name="SignUp"
             options={{
-              // title: "Happy Cow",
               title: <LogoText />,
               headerStyle: { backgroundColor: purpleCow },
               headerTitleStyle: { color: "white" },
@@ -142,7 +127,6 @@ const App = () => {
           <Stack.Screen
             name="Home"
             options={{
-              // title: "Happy Cow",
               title: <LogoText />,
               headerStyle: { backgroundColor: purpleCow },
               headerTitleStyle: { color: "white" },

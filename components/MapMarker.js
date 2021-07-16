@@ -1,26 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import MapView from "react-native-maps";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 
 import IconType from "../components/IconType";
 
 const MapMarker = ({
   item,
   index,
-  placeId,
+
   setPlaceId,
-  markSelected,
+
   setMarkSelected,
-  itemStore,
+
   setItemStore,
 }) => {
   //fonction qui se declanche quand on presse un marker sur la carte
@@ -28,12 +19,6 @@ const MapMarker = ({
     // console.log(placeId);
     setPlaceId(id);
     setItemStore(item);
-    // console.log(item);
-    // if (markSelected === true) {
-    //   setMarkSelected(false);
-    // } else {
-    //   setMarkSelected(true);
-    // }
     setMarkSelected(true);
   };
 

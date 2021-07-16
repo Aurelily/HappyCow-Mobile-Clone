@@ -1,28 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useNavigation } from "@react-navigation/core";
 
 //For geolocalisation
-import MapView from "react-native-maps";
 import * as Location from "expo-location";
 
 //Import axios for request
 import axios from "axios";
 
 //Import icons library
-import { Entypo, FontAwesome } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import {
-  Button,
   Text,
   TextInput,
   View,
   StyleSheet,
   FlatList,
-  Image,
   Dimensions,
-  ScrollView,
   TouchableOpacity,
   ActivityIndicator,
-  Plateform,
 } from "react-native";
 
 //import colors

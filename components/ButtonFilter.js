@@ -1,21 +1,9 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
 //import colors
 import colors from "../assets/colors";
-const {
-  purpleCow,
-  greenCow,
-  pinkVege,
-  pinkVegOption,
-  yellowStore,
-  blueOther,
-  pinkIceCream,
-  orangeJuice,
-  brownBakery,
-  blueCattering,
-  blueBnB,
-} = colors;
+const { purpleCow } = colors;
 
 //import components
 import IconType from "./IconType";
@@ -35,19 +23,16 @@ const ButtonFilter = ({
     let filtersCopy = [...filters];
     //if filtersCopy is empty
     if (filtersCopy.length === 0) {
-      console.log("tab is empty !");
       setSelected(true);
       filtersCopy.push(value);
       setFilters(filtersCopy);
     } else if (filtersCopy.length >= 1) {
       //if filtersCopy has one or more values
       if (filtersCopy.indexOf(value) === -1) {
-        console.log("i push value");
         setSelected(true);
         filtersCopy.push(value);
         setFilters(filtersCopy);
       } else {
-        console.log("value is already here !!!");
         setSelected(false);
         for (let i = 0; i < filtersCopy.length; i++) {
           if (filtersCopy.indexOf(value) !== -1) {
@@ -58,7 +43,7 @@ const ButtonFilter = ({
         }
       }
     }
-    console.log(filtersCopy);
+    // console.log(filtersCopy);
   };
 
   return (
@@ -88,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     margin: 2,
-    // flexDirection: "row",
+
     alignItems: "center",
     width: 120,
   },
@@ -99,7 +84,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     margin: 2,
-    // flexDirection: "row",
+
     alignItems: "center",
     width: 120,
   },

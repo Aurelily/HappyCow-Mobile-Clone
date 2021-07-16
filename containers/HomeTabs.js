@@ -1,15 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet } from "react-native";
 
 //import icons tab navigator
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
@@ -25,7 +16,7 @@ import SettingScreen from "../containers/SettingScreen";
 
 //import colors
 import colors from "../assets/colors";
-const { purpleCow, greenCow, pinkVege, pinkVegeOption, yellowStore } = colors;
+const { purpleCow } = colors;
 
 const HomeTabs = ({ setToken, url, data }) => {
   return (

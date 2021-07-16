@@ -20,7 +20,6 @@ import IconType from "./IconType";
 
 const MapItemCard = ({
   itemStore,
-  placeId,
   navigation,
   userLat,
   userLng,
@@ -108,13 +107,11 @@ const styles = StyleSheet.create({
     borderColor: purpleCow,
     borderWidth: 4,
     display: "flex",
-    // justifyContent: "center",
     alignItems: "center",
     padding: 5,
   },
   itemTitle: {
     fontSize: 18,
-    // fontWeight: "bold",
   },
   itemThumb: {
     borderTopRightRadius: 16,
@@ -125,7 +122,6 @@ const styles = StyleSheet.create({
   },
   headCol1: {
     alignItems: "flex-start",
-    // backgroundColor: "yellow",
     width: "80%",
   },
   cardCol1: {
@@ -137,7 +133,6 @@ const styles = StyleSheet.create({
   },
   headCol2: {
     alignItems: "flex-end",
-    // backgroundColor: "red",
     width: "20%",
   },
   cardCol2: {

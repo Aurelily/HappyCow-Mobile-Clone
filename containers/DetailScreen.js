@@ -94,7 +94,7 @@ function DetailScreen({ route, navigation, favList, manageFavorites }) {
 
   //Fonction qui gère les appels téléphoniques
   const callNumber = (phone) => {
-    console.log("callNumber ----> ", phone);
+    // console.log("callNumber ----> ", phone);
     let phoneNumber = phone;
     if (Platform.OS !== "android") {
       phoneNumber = `telprompt:${phone}`;
@@ -112,13 +112,13 @@ function DetailScreen({ route, navigation, favList, manageFavorites }) {
       .catch((err) => console.log(err));
   };
 
-  // Si les favoris existes, on les appelle depuis l'Async Storage
+  // Si les favoris existent, on les appelle depuis l'Async Storage
   useEffect(() => {
     const isFavorisExist = async () => {
       const fav = await AsyncStorage.getItem("fav");
       const userFav = JSON.parse(fav);
       if (fav !== null && fav !== undefined) {
-        console.log("userFav ", userFav);
+        // console.log("userFav ", userFav);
         if (userFav.some((item) => item.placeId === data.placeId)) {
           if (data.placeId === id) {
             setFavoris(!favoris);
@@ -169,7 +169,7 @@ function DetailScreen({ route, navigation, favList, manageFavorites }) {
                 location: data.location,
               });
               setFavoris(!favoris);
-              console.log(favList);
+              // console.log(favList);
             }}
           >
             {favoris ? (
@@ -180,7 +180,7 @@ function DetailScreen({ route, navigation, favList, manageFavorites }) {
           </TouchableOpacity>
         </View>
         {/* -----------------------------------------------------------------*/}
-        {/* PICTURES GALERY */}
+        {/* Pictures zone */}
         <View style={styles.picturesZone}>
           {data.pictures.length === 0 || data.pictures.length === 1 ? (
             <View style={styles.pictCol1Solo}>
@@ -519,7 +519,6 @@ const styles = StyleSheet.create({
   action1: {
     flex: 1,
     alignItems: "center",
-    // justifyContent: "center",
     backgroundColor: "white",
     paddingVertical: 20,
     marginHorizontal: 1,

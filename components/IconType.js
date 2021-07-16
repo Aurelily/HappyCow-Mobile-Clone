@@ -1,21 +1,11 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet } from "react-native";
 
 //import colors
 import colors from "../assets/colors";
 const {
   purpleCow,
   greenCow,
-  pinkVege,
   pinkVegOption,
   yellowStore,
   blueOther,
@@ -32,7 +22,6 @@ import {
   FontAwesome,
   MaterialIcons,
   Ionicons,
-  FontAwesome5,
   MaterialCommunityIcons,
   Entypo,
 } from "@expo/vector-icons";

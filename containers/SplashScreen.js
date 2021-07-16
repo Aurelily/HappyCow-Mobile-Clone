@@ -1,19 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-  Plateform,
-  Dimensions,
-} from "react-native";
-
-import colors from "../assets/colors";
-const { purpleCow, greenCow, pinkVege, pinkVegeOption, yellowStore } = colors;
+import { View, Image, StyleSheet, Dimensions } from "react-native";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;

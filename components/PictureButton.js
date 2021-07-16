@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 const PictureButton = ({ data, showModal, setShowModal }) => {
   return (
@@ -17,7 +8,6 @@ const PictureButton = ({ data, showModal, setShowModal }) => {
         style={styles.modalPicturesContent}
         onPress={() => {
           setShowModal(true);
-          console.log(data.pictures);
         }}
       >
         <Image

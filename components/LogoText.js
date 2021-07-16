@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from "react-native";
-import colors from "../assets/colors";
+import { Image, StyleSheet } from "react-native";
 
 const LogoText = () => {
   return (

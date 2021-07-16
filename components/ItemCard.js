@@ -1,16 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import * as geolib from "geolib";
 
-import {
-  View,
-  Text,
-  TextInput,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Button,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 //import icons
 import { AntDesign } from "@expo/vector-icons";
@@ -124,13 +115,11 @@ const styles = StyleSheet.create({
 
   headCol1: {
     alignItems: "flex-start",
-    // backgroundColor: "yellow",
     width: "80%",
   },
 
   headCol2: {
     alignItems: "flex-end",
-    // backgroundColor: "red",
     width: "20%",
   },
 
@@ -141,7 +130,6 @@ const styles = StyleSheet.create({
   },
   itemTitle: {
     fontSize: 18,
-    // fontWeight: "bold",
   },
   itemKm: {
     fontSize: 12,

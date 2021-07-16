@@ -3,13 +3,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   View,
   Text,
-  TextInput,
-  Image,
-  SafeAreaView,
   StyleSheet,
   Button,
-  TouchableOpacity,
-  ScrollView,
   FlatList,
   ActivityIndicator,
   Dimensions,
@@ -24,7 +19,6 @@ const { purpleCow } = colors;
 
 //Dimension des ecrans
 const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
 
 const FavoritesScreen = ({ navigation, userLat, userLng, authorize }) => {
   // Je stocke l'async storage dans un state

@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import * as Location from "expo-location";
-import MapView from "react-native-maps";
+import React, { useState, useRef } from "react";
 
-//Pour la recherche autocoplete GooglePlace
-// import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import MapView from "react-native-maps";
 
 import { GOOGLE_API_KEY } from "@env";
 
@@ -14,33 +11,22 @@ import {
   View,
   Text,
   TextInput,
-  Image,
-  SafeAreaView,
   StyleSheet,
-  Button,
   TouchableOpacity,
-  ActivityIndicator,
-  FlatList,
-  Dimensions,
 } from "react-native";
 
 //import colors
 import colors from "../assets/colors";
 const { purpleCow, greenCow } = colors;
 
-//Dimension des ecrans
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
-
 //Import icons library
-import { Entypo, FontAwesome } from "@expo/vector-icons";
+
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 //Import components
-import IconType from "../components/IconType";
+
 import MapMarker from "../components/MapMarker";
 import MapItemCard from "../components/MapItemCard";
-import ItemCard from "../components/ItemCard";
 
 const MapScreen = ({ route, navigation, url }) => {
   // //je recupere les parametres
@@ -84,7 +70,7 @@ const MapScreen = ({ route, navigation, url }) => {
           `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${input}&inputtype=textquery&fields=formatted_address,name,geometry&locationbias&key=${GOOGLE_API_KEY}`
         );
       }
-      console.log(response.data.candidates[0].geometry.location);
+
       setUserLoc2(true);
       setUserLat2(response.data.candidates[0].geometry.location.lat);
       setUserLng2(response.data.candidates[0].geometry.location.lng);
@@ -106,18 +92,6 @@ const MapScreen = ({ route, navigation, url }) => {
   return (
     <>
       <View style={styles.searchZone}>
-        {/* <GooglePlacesAutocomplete
-          placeholder="Chercher par localité"
-          onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            console.log(data, details);
-          }}
-          query={{
-            key: GOOGLE_API_KEY,
-            language: "fr",
-            components: "country:fr",
-          }}
-        /> */}
         <View style={styles.inputSearch}>
           <TouchableOpacity
             style={styles.compass}
