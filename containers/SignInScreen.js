@@ -40,33 +40,33 @@ export default function SignInScreen({ setToken, url }) {
 
   //handleSubmit function onPress on Sign in button
   const handleSubmit = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios.post(`${url}user/signin`, {
-        email,
-        password,
-      });
-      // console.log(response.data);
-
-      if (response.data.token) {
-        const userToken = response.data.token;
-
-        setToken(userToken);
-
-        //Je stock le token et le userId sur le asyncStorage
-        await AsyncStorage.setItem("userToken", userToken);
-
-        setIsLoading(false);
-      } else {
-        setAlert("Une erreur est survenue, veuillez réssayer.");
+    if (email && password) {
+      if (alert !== null) {
+        setAlert(null);
       }
-    } catch (error) {
-      if (error.response.data.error === "Unauthorized") {
-        setIsLoading(false);
-        setAlert("Mauvais email et/ou mot de passe");
-      } else {
-        setAlert("An error occurred");
+
+      try {
+        const response = await axios.post(`${url}user/signin`, {
+          email,
+          password,
+        });
+
+        if (response.data.token) {
+          const token = response.data.token;
+          setToken(token);
+        } else {
+          setAlert(error.response.data.message);
+        }
+      } catch (error) {
+        console.log(error.response.data.message);
+        if (error.response.status === 401) {
+          setAlert(error.response.data.message);
+        } else {
+          setAlert(error.response.data.message);
+        }
       }
+    } else {
+      setAlert("Please fill all fields");
     }
   };
 

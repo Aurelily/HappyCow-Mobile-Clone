@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Dimensions,
   Image,
+  Button,
 } from "react-native";
 
 //Dimension des ecrans
@@ -35,6 +36,10 @@ import {
   FontAwesome,
 } from "@expo/vector-icons";
 
+//import component
+import ModalBirthday from "../components/ModalBirthday";
+import ModalVegType from "../components/ModalVegType";
+
 export default function SignUpScreen({ url }) {
   const navigation = useNavigation();
 
@@ -45,10 +50,14 @@ export default function SignUpScreen({ url }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [vegeType, setVegeType] = useState("");
   const [location, setLocation] = useState("");
-  const [yearBirth, setyearBirth] = useState("");
-
+  const [yearBirth, setyearBirth] = useState([{ id: "year", value: 1970 }]);
+  //States to show alerts messages and loading datas
   const [alert, setAlert] = useState(null);
+  const [alertFormat, setAlertFormat] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  //States to show scrolling menu for birthyear date and vegan type
+  const [showYear, setShowYear] = useState(false);
+  const [showVegType, setShowVegType] = useState(false);
 
   const handleSubmit = async () => {
     if (
@@ -90,120 +99,193 @@ export default function SignUpScreen({ url }) {
         }
       } else {
         // si les 2 MDP ne sont pas identiques
-        setAlert("MDP doivent être identiques");
+        setAlert("Les 2 mots de passe doivent être identiques");
       }
     } else {
       // Si tous les champs ne sont pas remplis
       setAlert("Remplir tous les champs");
     }
   };
+  const validateMail = (email) => {
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (reg.test(email) === false) {
+      setAlertFormat("Email is Not Correct");
+      setEmail(email);
+      return false;
+    } else {
+      setEmail(email);
+      setAlertFormat(null);
+      console.log("Email is Correct");
+    }
+  };
 
   return (
-    <KeyboardAwareScrollView>
-      <SafeAreaView>
-        <View style={styles.pictureZone}>
-          <Image
-            source={require("../assets/img/photo-signin.jpeg")}
-            style={styles.pictureStyle}
-          />
-        </View>
-        <View style={styles.container}>
-          {alert && <Text style={styles.errorMessage}>{alert}</Text>}
-          <View style={styles.iconsInput}>
-            <Entypo name="mail" size={24} color="yellowgreen" />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="email"
-              autoCapitalize="none"
-              keyboardType="email-address"
-              onChangeText={(text) => {
-                setEmail(text);
-              }}
+    <>
+      {showVegType && (
+        <ModalVegType
+          setShowVegType={setShowVegType}
+          setVegeType={setVegeType}
+        />
+      )}
+      <KeyboardAwareScrollView>
+        <SafeAreaView>
+          <View style={styles.pictureZone}>
+            <Image
+              source={require("../assets/img/photo-signin.jpeg")}
+              style={styles.pictureStyle}
             />
           </View>
-          <View style={styles.iconsInput}>
-            <MaterialCommunityIcons
-              name="account"
-              size={24}
-              color="yellowgreen"
-            />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="Nom d'utilisateur"
-              autoCapitalize="none"
-              onChangeText={(text) => {
-                setUsername(text);
-              }}
-            />
-          </View>
-          <View style={styles.iconsInput}>
-            <Entypo name="lock" size={24} color="yellowgreen" />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="Mot de passe"
-              autoCapitalize="none"
-              secureTextEntry={true}
-              onChangeText={(text) => {
-                setPassword(text);
-              }}
-            />
-          </View>
-          <View style={styles.iconsInput}>
-            <Entypo name="lock" size={24} color="yellowgreen" />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="Confirmer le mot de passe"
-              autoCapitalize="none"
-              secureTextEntry={true}
-              onChangeText={(text) => {
-                setConfirmPassword(text);
-              }}
-            />
-          </View>
-          <View style={styles.iconsInput}>
-            <Entypo name="flower" size={24} color="yellowgreen" />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="Type de végé"
-              autoCapitalize="none"
-              onChangeText={(text) => {
-                setVegeType(text);
-              }}
-            />
-          </View>
-          <View style={styles.iconsInput}>
-            <MaterialIcons name="house" size={24} color="yellowgreen" />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="Ville d'origine"
-              autoCapitalize="none"
-              onChangeText={(text) => {
-                setLocation(text);
-              }}
-            />
-          </View>
-          <View style={styles.iconsInput}>
-            <FontAwesome name="birthday-cake" size={24} color="yellowgreen" />
-            <TextInput
-              style={styles.inputSignUp}
-              placeholder="Année de naissance"
-              autoCapitalize="none"
-              onChangeText={(text) => {
-                setyearBirth(text);
-              }}
-            />
-          </View>
+          <View style={styles.container}>
+            {alert && <Text style={styles.errorMessage}>{alert}</Text>}
+            {alertFormat && (
+              <Text style={styles.errorMessage}>{alertFormat}</Text>
+            )}
 
-          <TouchableOpacity
-            style={styles.button}
-            disabled={isLoading ? true : false}
-            onPress={handleSubmit}
-          >
-            <Text style={styles.txtButton}>S'inscrire</Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
-    </KeyboardAwareScrollView>
+            <View style={styles.iconsInput}>
+              <Entypo name="mail" size={24} color="yellowgreen" />
+              <TextInput
+                style={styles.inputSignUp}
+                placeholder="email"
+                autoCapitalize="none"
+                keyboardType="email-address"
+                onChangeText={(text) => {
+                  validateMail(text);
+                }}
+                onFocus={() => {
+                  setShowYear(false);
+                }}
+              />
+            </View>
+            <View style={styles.iconsInput}>
+              <MaterialCommunityIcons
+                name="account"
+                size={24}
+                color="yellowgreen"
+              />
+              <TextInput
+                style={styles.inputSignUp}
+                placeholder="Nom d'utilisateur"
+                autoCapitalize="none"
+                onChangeText={(text) => {
+                  setUsername(text);
+                }}
+                onFocus={() => {
+                  setShowYear(false);
+                }}
+              />
+            </View>
+            <View style={styles.iconsInput}>
+              {showYear ? (
+                <>
+                  <ModalBirthday
+                    yearBirth={yearBirth}
+                    setyearBirth={setyearBirth}
+                    setShowYear={setShowYear}
+                  />
+                </>
+              ) : (
+                <>
+                  <FontAwesome
+                    name="birthday-cake"
+                    size={24}
+                    color="yellowgreen"
+                  />
+                  <TextInput
+                    style={styles.inputSignUp}
+                    value={yearBirth[0].value.toString()}
+                    placeholder="Année de naissance"
+                    autoCapitalize="none"
+                    onChangeText={(text) => {
+                      setyearBirth(text);
+                    }}
+                    onFocus={() => {
+                      setShowYear(true);
+                    }}
+                  />
+                </>
+              )}
+            </View>
+            <View style={styles.iconsInput}>
+              <Entypo name="lock" size={24} color="yellowgreen" />
+              <TextInput
+                style={styles.inputSignUp}
+                placeholder="Mot de passe"
+                autoCapitalize="none"
+                secureTextEntry={true}
+                onChangeText={(text) => {
+                  setPassword(text);
+                }}
+                onFocus={() => {
+                  setShowYear(false);
+                }}
+              />
+            </View>
+            <View style={styles.iconsInput}>
+              <Entypo name="lock" size={24} color="yellowgreen" />
+              <TextInput
+                style={styles.inputSignUp}
+                placeholder="Confirmer le mot de passe"
+                autoCapitalize="none"
+                secureTextEntry={true}
+                onChangeText={(text) => {
+                  setConfirmPassword(text);
+                }}
+                onFocus={() => {
+                  setShowYear(false);
+                }}
+              />
+            </View>
+
+            <View style={styles.iconsInput}>
+              <TouchableOpacity
+                onPress={() => {
+                  setShowVegType(true);
+                }}
+              >
+                <Entypo name="flower" size={24} color="yellowgreen" />
+              </TouchableOpacity>
+
+              <TextInput
+                style={styles.inputSignUp}
+                placeholder="<-- Choisissez votre VegeType"
+                value={vegeType}
+                autoCapitalize="none"
+                editable={false}
+                onChangeText={(text) => {
+                  setVegeType(text);
+                }}
+                onFocus={() => {
+                  setShowYear(false);
+                  setShowVegType(true);
+                }}
+              />
+            </View>
+            <View style={styles.iconsInput}>
+              <MaterialIcons name="house" size={24} color="yellowgreen" />
+              <TextInput
+                style={styles.inputSignUp}
+                placeholder="Ville d'origine"
+                autoCapitalize="none"
+                onChangeText={(text) => {
+                  setLocation(text);
+                }}
+                onFocus={() => {
+                  setShowYear(false);
+                }}
+              />
+            </View>
+
+            <TouchableOpacity
+              style={styles.button}
+              disabled={isLoading ? true : false}
+              onPress={handleSubmit}
+            >
+              <Text style={styles.txtButton}>S'inscrire</Text>
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </KeyboardAwareScrollView>
+    </>
   );
 }
 
