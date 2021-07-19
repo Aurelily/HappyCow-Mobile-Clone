@@ -1,4 +1,4 @@
-HAPPY COW MOBILE APP Clone 👚👕👖
+HAPPY COW MOBILE APP Clone 🐮🥙🥗
 -----------------
   
 📆 Build in : June 2021.   
