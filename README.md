@@ -28,7 +28,7 @@ Overview
 ![03-searchName](https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/03-searchName_neok3u.gif)
 ![04-mapScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626686548/Git%20ReadMe/HappyCow/04-mapScreen_aywtcr.gif)
 ![05-searchLocalite](https://res.cloudinary.com/lilycloud/image/upload/v1626687842/Git%20ReadMe/HappyCow/05-searchLocalite_gqlnux.gif)
-![06-detailScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/06-detailScreen_bx2d05.gif)
+![06-detailScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626687962/Git%20ReadMe/HappyCow/06-detailScreen_gni4do.gif)
 ![07-favoriteScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626686549/Git%20ReadMe/HappyCow/07-favoriteScreen_vmd079.gif)
 
 
