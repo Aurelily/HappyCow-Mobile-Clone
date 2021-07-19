@@ -2,11 +2,12 @@ HAPPY COW MOBILE APP Clone 🐮🥙🥗
 -----------------
   
 📆 Build in : June 2021.   
-🖥 Type : Mobile React Native Frontend demo project.Optimize for IOS Iphone 12
+🖥 Type : Mobile React Native Frontend demo project.
+📱 Optimal design for IOS Iphone 12 but working in all device and system
 
 -----------------
 
-Overview
+Overview 
 ---
 ✏️ Happy Cow mobile app clone made at [Le Reacteur](https://www.lereacteur.io/).   
 
