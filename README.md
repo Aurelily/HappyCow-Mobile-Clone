@@ -50,6 +50,14 @@ Overview
 * Heroku
 * MongoDB database
 
+📱 Preview on your device with EXPO mobile app
+---
+You can test this app for real on your device with Expo Publish !
+You must install [EXPO](https://expo.io) app in your device and scan this QR Code to test the app (On IPhone you must connect expo with specific password and username, contact Me if you want this)
+
+![QRCode](https://res.cloudinary.com/lilycloud/image/upload/v1626688844/Git%20ReadMe/HappyCow/expo-happycow_zqqkde.png)
+
+
 💻 Installation
 ---
 
