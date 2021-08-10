@@ -3,7 +3,8 @@ HAPPY COW MOBILE APP Clone 🐮🥙🥗
   
 📆 Build in : June 2021.   
 🖥 Type : Mobile React Native Frontend demo project.
-📱 Optimal design for IOS Iphone 12 but working in all device and system
+
+📱 This app is optimal for **IOS Iphone 12** 
 
 ### You can Sign Up on demo or directly Sign in for testing with
 * email : testing@gmail.com
@@ -27,14 +28,24 @@ Overview
 
 
 ---
-![01-signup1](https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/01-signup1_epxxkx.gif)
-![01-signup2](https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/01-signup2_qjoszh.gif)
-![02-signin](https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/02-signin_pb6nrh.gif)
-![03-searchName](https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/03-searchName_neok3u.gif)
-![04-mapScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626686548/Git%20ReadMe/HappyCow/04-mapScreen_aywtcr.gif)
-![05-searchLocalite](https://res.cloudinary.com/lilycloud/image/upload/v1626687842/Git%20ReadMe/HappyCow/05-searchLocalite_gqlnux.gif)
-![06-detailScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626687962/Git%20ReadMe/HappyCow/06-detailScreen_gni4do.gif)
-![07-favoriteScreen](https://res.cloudinary.com/lilycloud/image/upload/v1626686549/Git%20ReadMe/HappyCow/07-favoriteScreen_vmd079.gif)
+<table>
+  <tr>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/01-signup1_epxxkx.gif"  alt="happy01"></td>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/01-signup2_qjoszh.gif"  alt="happy02"></td>
+     <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/02-signin_pb6nrh.gif"  alt="happy03"></td>
+  </tr>
+    <tr>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626686547/Git%20ReadMe/HappyCow/03-searchName_neok3u.gif"  alt="happy04"></td>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626686548/Git%20ReadMe/HappyCow/04-mapScreen_aywtcr.gif"  alt="happy05"></td>
+      <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626687842/Git%20ReadMe/HappyCow/05-searchLocalite_gqlnux.gif"  alt="happy06"></td>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626687962/Git%20ReadMe/HappyCow/06-detailScreen_gni4do.gif"  alt="happy07"></td>
+     <td><img src="https://res.cloudinary.com/lilycloud/image/upload/v1626686549/Git%20ReadMe/HappyCow/07-favoriteScreen_vmd079.gif"  alt="happy08"></td>
+
+
+  </tr>
+  </table>
 
 
 
