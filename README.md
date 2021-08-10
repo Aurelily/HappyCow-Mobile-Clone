@@ -5,6 +5,10 @@ HAPPY COW MOBILE APP Clone 🐮🥙🥗
 🖥 Type : Mobile React Native Frontend demo project.
 📱 Optimal design for IOS Iphone 12 but working in all device and system
 
+### You can Sign Up on demo or directly Sign in for testing with
+* email : testing@gmail.com
+* password : azerty
+
 -----------------
 
 Overview 
