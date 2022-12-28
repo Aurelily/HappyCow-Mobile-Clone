@@ -30,7 +30,8 @@ const Stack = createStackNavigator();
 
 //variable URL
 // const url = "http://localhost:3001/";
-const url = "https://lily-happycow.herokuapp.com/";
+//const url = "https://lily-happycow.herokuapp.com/";
+const url = "https://happy-cow-express-git-main-aurelily.vercel.app/";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
