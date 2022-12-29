@@ -3,6 +3,7 @@ module.exports = function (api) {
   return {
     presets: ["babel-preset-expo"],
     plugins: [
+      "@babel/plugin-proposal-unicode-property-regex",
       [
         "module:react-native-dotenv",
         {
