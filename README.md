@@ -6,9 +6,17 @@ HAPPY COW MOBILE APP Clone 🐮🥙🥗
 
 📱 This app is optimal for **IOS Iphone 12** 
 
+I made API backend (hosted by VERCEL) : [Backend repository here](https://github.com/Aurelily/HappyCow-back)
+
 ### You can Sign Up on demo or directly Sign in for testing with
 * email : testing@gmail.com
 * password : azerty
+
+
+### LOCALISATION LIMITATION
+warning ! Restaurants of demo database are only around Paris in France. If you are on other localisation, you can't see restaurant around you.
+You can test restaurants's map around Paris in France.
+
 
 -----------------
 
@@ -71,7 +79,7 @@ Overview
 You can test this app for real on your device with Expo Publish !
 You must install [EXPO](https://expo.io) app in your device and scan this QR Code to test the app (On IPhone you must connect expo with specific password and username, contact Me if you want this)
 
-![QRCode](https://res.cloudinary.com/lilycloud/image/upload/v1672323173/Git%20ReadMe/HappyCow/qrcode-expo_aesin6.png)
+![QRCode](https://res.cloudinary.com/lilycloud/image/upload/v1672327847/Git%20ReadMe/HappyCow/qrcode-expo2_q93wyb.png)
 
 
 💻 Installation
