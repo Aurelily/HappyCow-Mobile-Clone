@@ -6,6 +6,8 @@ HAPPY COW MOBILE APP Clone 🐮🥙🥗
 
 📱 This app is optimal for **IOS Iphone 12** 
 
+I made API backend (hosted by VERCEL) : [Backend repository here](https://github.com/Aurelily/HappyCow-back)
+
 ### You can Sign Up on demo or directly Sign in for testing with
 * email : testing@gmail.com
 * password : azerty
