@@ -10,6 +10,12 @@ HAPPY COW MOBILE APP Clone 🐮🥙🥗
 * email : testing@gmail.com
 * password : azerty
 
+
+### LOCALISATION LIMITATION
+warning ! Restaurants of demo database are only around Paris in France. If you are on other localisation, you can't see restaurant around you.
+You can test restaurants's map around Paris in France.
+
+
 -----------------
 
 Overview 
